@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import os
+from flask import send_from_directory
 
 app = Flask(__name__)
 
@@ -36,6 +37,14 @@ def query():
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@app.route('/.well-known/ai-plugin.json')
+def serve_ai_plugin():
+    return send_from_directory('.well-known', 'ai-plugin.json', mimetype='application/json')
+
+@app.route('/openapi.yaml')
+def serve_openapi_yaml():
+    return send_from_directory('.', 'openapi.yaml', mimetype='application/yaml')
 
 if __name__ == '__main__':
     import os

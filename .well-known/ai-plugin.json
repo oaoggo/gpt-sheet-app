@@ -1,0 +1,19 @@
+{
+    "schema_version": "v1",
+    "name_for_model": "sheet_query_tool",
+    "name_for_human": "📄 Google Sheet Query Tool",
+    "description_for_model": "Query data from a specific Google Sheet and get structured JSON responses.",
+    "description_for_human": "구글 시트 데이터를 조회하고 응답받을 수 있는 도구입니다.",
+    "auth": {
+      "type": "none"
+    },
+    "api": {
+      "type": "openapi",
+      "url": "https://gpt-sheet-app.onrender.com/openapi.yaml",
+      "is_user_authenticated": false
+    },
+    "logo_url": "https://gpt-sheet-app.onrender.com/logo.png",
+    "contact_email": "your@email.com",
+    "legal_info_url": "https://gpt-sheet-app.onrender.com/privacy"
+  }
+  

@@ -1,0 +1,36 @@
+openapi: 3.0.1
+info:
+  title: GPT Google Sheet API
+  description: Get data from a Google Sheet
+  version: '1.0.0'
+servers:
+  - url: https://gpt-sheet-app.onrender.com
+paths:
+  /query:
+    post:
+      operationId: querySheet
+      summary: 시트 데이터 조회
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                question:
+                  type: string
+                  description: 질의 내용
+      responses:
+        '200':
+          description: 성공
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  question:
+                    type: string
+                  sheet_data:
+                    type: array
+                    items:
+                      type: object
