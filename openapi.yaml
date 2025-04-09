@@ -15,23 +15,32 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                question:
-                  type: string
-                  description: 질의 내용
+              $ref: '#/components/schemas/QueryRequest'
       responses:
         '200':
           description: 성공
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  question:
-                    type: string
-                  sheet_data:
-                    type: array
-                    items:
-                      type: object
-components: {}
+                $ref: '#/components/schemas/QueryResponse'
+
+components:
+  schemas:
+    QueryRequest:
+      type: object
+      properties:
+        question:
+          type: string
+          description: 질의 내용
+      required:
+        - question
+
+    QueryResponse:
+      type: object
+      properties:
+        question:
+          type: string
+        sheet_data:
+          type: array
+          items:
+            type: object
