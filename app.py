@@ -46,6 +46,11 @@ def serve_ai_plugin():
 def serve_openapi_yaml():
     return send_from_directory('.', 'openapi.yaml', mimetype='application/yaml')
 
+@app.route('/logo.png')
+def serve_logo():
+    return send_from_directory('.', 'logo.png', mimetype='image/png')
+
+
 if __name__ == '__main__':
     import os
     port = int(os.environ.get('PORT', 5000))
