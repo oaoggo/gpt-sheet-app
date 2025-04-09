@@ -1,4 +1,5 @@
-openapi: 3.0.1
+openapi: 3.1.0   ✅ 이렇게 수정
+
 info:
   title: GPT Google Sheet API
   description: Get data from a Google Sheet
