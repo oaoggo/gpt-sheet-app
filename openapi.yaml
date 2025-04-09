@@ -1,5 +1,4 @@
-openapi: 3.1.0   ✅ 이렇게 수정
-
+openapi: 3.1.0
 info:
   title: GPT Google Sheet API
   description: Get data from a Google Sheet
@@ -35,3 +34,4 @@ paths:
                     type: array
                     items:
                       type: object
+components: {}
